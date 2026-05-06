@@ -16,8 +16,6 @@ This PowerShell script automates the creation of a standardized Active Directory
 2.  **RSAT**: The Active Directory Domain Services (RSAT) tools must be installed on the machine.
 3.  **CSV Files**: Ensure `users.csv` and `groups.csv` are in the same folder as the script.
 
----
-
 ## File Structure
 
 ### 1. groups.csv
@@ -65,10 +63,7 @@ Creates a custom root OU called "Staging" and uses FirstName.LastName@domain.com
 | -MailFormat   | No        | SamAccountName   | SamAccountName, FullName, or InitialAndSurname.         |
 
 ## Technical Details
-* **Password:** All new users are assigned the default password: TestPasswort123!.
-
-* **Force Change:** Users are flagged to change their password at the first logon (ChangePasswordAtLogon = $true).
-
-* **UPN Suffix:** The script checks Get-ADForest and uses Set-ADForest to append the new domain if it is missing.
-
-* **Safety:** The script checks if OUs, Groups, or Users already exist before creating them to avoid errors on repeated runs.
+- **Password:** All new users are assigned the default password: TestPasswort123!.
+- **Force Change:** Users are flagged to change their password at the first logon (ChangePasswordAtLogon = $true).
+- **UPN Suffix:** The script checks Get-ADForest and uses Set-ADForest to append the new domain if it is missing.
+- **Safety:** The script checks if OUs, Groups, or Users already exist before creating them to avoid errors on repeated runs.
