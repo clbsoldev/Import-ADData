@@ -26,6 +26,7 @@ Define the security groups you want to create.
 GroupName,Members
 Webex-Users,""
 IT-Staff,"admin.local"
+```
 
 ### 2. users.csv
 
@@ -57,7 +58,11 @@ Creates a custom root OU called "Staging" and uses FirstName.LastName@domain.com
 ```
 
 ### Parameters Reference
-
+| Parameter     | Mandatory | Default          | Options / Description                                   |
+| :------------ | :-------- | :--------------- | :------------------------------------------------------ |
+| -MailDomain   | Yes       | -                | The domain suffix for Mail/UPN (e.g., lab.com).          |
+| -RootOUName   | No        | DEMO             | The name of the top-level OU to be created.             |
+| -MailFormat   | No        | SamAccountName   | SamAccountName, FullName, or InitialAndSurname.         |
 
 ## Technical Details
 * **Password:** All new users are assigned the default password: TestPasswort123!.
